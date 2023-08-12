@@ -46,6 +46,28 @@ for (let i = 0; i < boxes.length; i++) {                //Aqui ele está pegando
 
 }
 
+
+// evento para saber se é  2 players ou IA
+for(let i = 0; i < buttons.length;  i++) {
+
+    buttons[i].addEventListener("click", function() {
+       
+        secondPlayer = this.getAttribute("id");
+
+        for(let j = 0;  j < buttons.length; j++) {
+            buttons[j].style.display = 'none';
+        }
+
+        setTimeout(function(){
+
+            let container = document.querySelector("#container");
+            container.classList.remove("hide");
+            
+        }, 500);
+
+    });
+}
+
 //Vê quem vai jogar
 function checkElemento(player1, player2) {
     if (player1 == player2) {   //Se o play 1 for igual ao play 2  o "let elemento" receberá o valor de X
